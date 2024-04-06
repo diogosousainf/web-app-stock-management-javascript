@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Stock de Eletrodomésticos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesindex.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg  ">
+        <a class="navbar-brand mt-3" href="#">
+            <img src="/resources/imagens/z3CjfqXiT9qZBHYoihYHuQ-removebg-preview.png" width="50" height="50" class="d-inline-block align-top " alt="">
+            Gestão de Stock de Eletrodomésticos
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active ">
+                    <button type="button" class="btn btn-light" data-toggle="modal" data-target="#addModal">Adicionar Eletrodoméstico</button>
+                </li>
+            
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html" id="logoutLink">Logout</a>
+                </li>
+            </ul>
+
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" id="searchInput" placeholder="Pesquisar" aria-label="Pesquisar">
+                <button class="btn btn-outline-light my-2 my-sm-0" id="searchButton" type="button">Pesquisar</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2 class="text-center">Eletrodomésticos em Stock</h2>
+        <div id="stockList" class="stock-item"></div>
+    </div>
+
+    <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addModalLabel">Adicionar Novo Eletrodoméstico</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="addForm">
+                        <div class="form-group">
+                            <label for="name">Nome:</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="brand">Marca:</label>
+                            <input type="text" class="form-control" id="brand" name="brand" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="model">Modelo:</label>
+                            <input type="text" class="form-control" id="model" name="model" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="price">Preço:</label>
+                            <input type="number" class="form-control" id="price" name="price" step="0.01" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Quantidade em Stock:</label>
+                            <input type="number" class="form-control" id="quantity" name="quantity" min="0" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Adicionar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel">Editar Eletrodoméstico</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="editForm">
+                        <div class="form-group">
+                            <label for="editName">Nome:</label>
+                            <input type="text" class="form-control" id="editName" name="editName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editBrand">Marca:</label>
+                            <input type="text" class="form-control" id="editBrand" name="editBrand" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editModel">Modelo:</label>
+                            <input type="text" class="form-control" id="editModel" name="editModel" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editPrice">Preço:</label>
+                            <input type="number" class="form-control" id="editPrice" name="editPrice" step="0.01" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editQuantity">Quantidade em Stock:</label>
+                            <input type="number" class="form-control" id="editQuantity" name="editQuantity" min="0" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted">Developed by Diogo Sousa</span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="stock.js"></script>
+   
+</body>
+</html>
